@@ -47,5 +47,9 @@ function getData(zip) {
            let img = document.createElement("img");
            img.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
            weather.appendChild(img);
+        })
+        .catch(function(err) {
+            console.log('Fetch problem: ' + err.message);
+            alert('Something went wrong!');
         });
-}
+    }
