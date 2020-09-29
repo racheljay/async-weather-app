@@ -14,7 +14,8 @@ const city = document.getElementById('city-name'),
 
 //let zip = 40330;
 
-inputForm.addEventListener("submit", () => {
+inputForm.addEventListener("submit", (e) => {
+    e.preventDefault();
     var zip = inputData.value;
     if (zip.length != 5) {
         console.error('Not a zipcode');
@@ -45,11 +46,10 @@ function getData(zip) {
             c.innerHTML = Math.round(kelvinTemp - 273.15);
             
            let img = document.createElement("img");
-           img.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+           img.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
            weather.appendChild(img);
         })
         .catch(function(err) {
             console.log('Fetch problem: ' + err.message);
-            alert('Something went wrong!');
-        });
+        })
     }
