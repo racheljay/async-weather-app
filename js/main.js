@@ -12,8 +12,6 @@ const city = document.getElementById('city-name'),
     inputForm = document.getElementById('input-form'),
     btn = document.getElementById('button');
 
-//let zip = 40330;
-
 inputForm.addEventListener("submit", (e) => {
     e.preventDefault();
     var zip = inputData.value;
@@ -50,6 +48,8 @@ function getData(zip) {
            weather.appendChild(img);
         })
         .catch(function(err) {
+            alert('Invalid Zip');
+            city.innerHTML = "";
             console.log('Fetch problem: ' + err.message);
         })
     }
