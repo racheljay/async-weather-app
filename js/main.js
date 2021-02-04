@@ -2,6 +2,7 @@
 // api.openweathermap.org/data/2.5/weather?zip=40502,&appid=d5f3a56c48b321f9643f548d57a655a8
 //let weatherData = fetch('http://api.openweathermap.org/data/2.5/weather?zip=40502,&appid=d5f3a56c48b321f9643f548d57a655a8')
 
+//get variables from html
 const city = document.getElementById('city-name'),
     k = document.getElementById('tempK'),
     f = document.getElementById('tempF'),
@@ -12,6 +13,7 @@ const city = document.getElementById('city-name'),
     inputForm = document.getElementById('input-form'),
     btn = document.getElementById('button');
 
+//make the button work
 inputForm.addEventListener("submit", (e) => {
     e.preventDefault();
     var zip = inputData.value;
@@ -26,7 +28,7 @@ inputForm.addEventListener("submit", (e) => {
 
 
 
-//input.value
+//fetch request
 
 function getData(zip) {
     fetch(`https://api.openweathermap.org/data/2.5/weather?zip=${zip},&appid=d5f3a56c48b321f9643f548d57a655a8`)
